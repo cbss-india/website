@@ -11,7 +11,7 @@ interface Publication {
 }
 
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 20;
 
 const Publications = () => {
   const [search, setSearch] = useState("");
@@ -74,17 +74,6 @@ const Publications = () => {
 
       <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
-          {/* Search */}
-          <div className="relative mb-8">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="Search by title or author..."
-              value={search}
-              onChange={(e) => handleSearch(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-
           {/* Count */}
           <p className="text-sm text-muted-foreground mb-6">
             Showing {paginated.length} of {filtered.length} publications
