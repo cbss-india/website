@@ -2,15 +2,19 @@ import { Mail, Linkedin, Award, BookOpen, MapPin } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Dr. A. Hussain",
+    name: "Dr. Syed Ainul Hussain",
     role: "Founder & Director",
     bio: "Pioneering biodiversity conservation planning and sustainability science in India with over 20 years of ecosystem research experience.",
     email: "director@cbss.org.in",
     linkedin: "#",
-    image: "/team/test.avif",
+    image: "/team/director.jpg",
     qualification: "Ph.D. in Conservation Biology",
     experience: "20+ Years Experience",
-    expertise: ["Ecosystem Restoration", "Conservation Planning", "Sustainability Science"],
+    expertise: [
+      "Ecosystem Restoration",
+      "Conservation Planning",
+      "Sustainability Science",
+    ],
     publications: 85,
     location: "Dehradun, Uttarakhand",
     leader: true,
@@ -65,7 +69,8 @@ const Team = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Team</h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
             An interdisciplinary group of scientists and professionals dedicated
-            to securing India’s biodiversity and advancing sustainability science.
+            to securing India’s biodiversity and advancing sustainability
+            science.
           </p>
         </div>
       </section>
@@ -73,7 +78,6 @@ const Team = () => {
       {/* Team Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-6xl space-y-16">
-
           {teamMembers.map((member) =>
             member.leader ? (
               /* ================== LEADER SPOTLIGHT ================== */
@@ -94,11 +98,13 @@ const Team = () => {
                   {/* Content */}
                   <div className="p-10 flex flex-col justify-center">
                     <span className="inline-block mb-4 px-4 py-1 text-xs font-semibold tracking-wide uppercase bg-primary/10 text-primary rounded-full">
-                      Leadership
+                      Director
                     </span>
 
                     <h2 className="text-3xl font-bold mb-2">{member.name}</h2>
-                    <p className="text-primary font-medium mb-4">{member.role}</p>
+                    <p className="text-primary font-medium mb-4">
+                      {member.role}
+                    </p>
 
                     <p className="text-muted-foreground leading-relaxed mb-6">
                       {member.bio}
@@ -199,7 +205,7 @@ const Team = () => {
                   </div>
                 </div>
               </div>
-            )
+            ),
           )}
         </div>
       </section>
@@ -211,8 +217,8 @@ const Team = () => {
             Collaborate With Us
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            We welcome researchers, students, and institutions to collaborate
-            in advancing biodiversity conservation and sustainability science.
+            We welcome researchers, students, and institutions to collaborate in
+            advancing biodiversity conservation and sustainability science.
           </p>
           <a
             href="/contact"
