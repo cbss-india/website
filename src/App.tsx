@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Publications from "./pages/Publications";
 import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
+import Teams from "./pages/Teams";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/publications" element={<Publications />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/team" element={<Teams />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

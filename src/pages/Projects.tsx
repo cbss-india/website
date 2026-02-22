@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Papa from "papaparse";
+import { Calendar, Landmark, FolderKanban } from "lucide-react";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,45 +26,87 @@ const Projects = () => {
 
   return (
     <main>
-      <section className="py-20 bg-card">
+      {/* Header */}
+      <section className="py-24 bg-card">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Research Projects
+          </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Research projects by CBSS scientists contributing to biodiversity conservation and sustainability science.
+            Science-driven initiatives advancing biodiversity conservation,
+            ecosystem restoration, and sustainability science across India.
           </p>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      {/* Projects */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 max-w-5xl">
           {loading ? (
-            <p className="text-center text-muted-foreground">Loading projects...</p>
+            <p className="text-center text-muted-foreground">
+              Loading projects...
+            </p>
           ) : (
-            <div className="px-10 overflow-x-auto">
-              <table className="min-w-full border border-border rounded-lg overflow-hidden px-10">
-                <thead className="bg-muted">
-                  <tr>
-                    <th className="text-left px-10 py-4 text-sm font-semibold border-b">Title</th>
-                    <th className="text-left px-10 py-4 text-sm font-semibold border-b">Agency</th>
-                    <th className="text-left px-10 py-4 text-sm font-semibold border-b">Period</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {projects.map((project, index) => (
-                    <tr key={index} className="border-b hover:bg-muted/50 transition-colors">
-                      <td className="px-10 py-5 text-sm font-medium">
-                        {project.Title || project.title || "-"}
-                      </td>
-                      <td className="px-10 py-5 text-sm text-muted-foreground">
-                        {project.Funding_Agency || project.Agency || "-"}
-                      </td>
-                      <td className="px-10 py-5 text-sm text-muted-foreground">
-                        {project.Duration || project.Period || "-"}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="space-y-20">
+              {projects.map((project, index) => {
+                const title = project.Title || project.title || "-";
+                const agency =
+                  project.Funding_Agency || project.Agency || "-";
+                const duration =
+                  project.Duration || project.Period || "-";
+
+                const isOngoing =
+                  duration.toLowerCase().includes("ongoing");
+
+                return (
+                  <div
+                    key={index}
+                    className="relative border-l-4 border-primary pl-8 group"
+                  >
+                    {/* Status Badge */}
+                    <span
+                      className={`inline-block mb-4 text-xs px-3 py-1 rounded-full font-medium ${
+                        isOngoing
+                          ? "bg-green-100 text-green-700"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      {isOngoing ? "Ongoing Project" : "Completed Project"}
+                    </span>
+
+                    {/* Title */}
+                    <h2 className="text-2xl font-semibold mb-4 leading-snug group-hover:text-primary transition-colors">
+                      {title}
+                    </h2>
+
+                    {/* Meta Info */}
+                    <div className="grid sm:grid-cols-2 gap-6 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-3">
+                        <Landmark className="h-4 w-4 text-primary" />
+                        <div>
+                          <p className="font-medium text-foreground">
+                            Funding Agency
+                          </p>
+                          <p>{agency}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <Calendar className="h-4 w-4 text-primary" />
+                        <div>
+                          <p className="font-medium text-foreground">
+                            Project Duration
+                          </p>
+                          <p>{duration}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Decorative separator */}
+                    <div className="mt-10 h-px bg-border"></div>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
