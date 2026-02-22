@@ -7,6 +7,7 @@ interface Publication {
   title: string;
   authors: string;
   image?: string;
+  link?: string;
 }
 
 const ITEMS_PER_PAGE = 20;
@@ -34,6 +35,7 @@ const Publications = () => {
             title: row.Title || row.title || "",
             authors: row.Authors || row.authors || "",
             image: row.Image_URL || row.image || "",
+            link: row.Link || row.link || "",
           }));
 
           setInitialPublications(formatted);
@@ -86,6 +88,7 @@ const Publications = () => {
               <div
                 key={i}
                 className="p-5 rounded-lg border bg-card hover:shadow-md transition-shadow h-full"
+                onClick={() => window.open(pub.link || "#", "_blank")}
               >
                 <div className="flex gap-3">
                   <BookOpen className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -93,9 +96,9 @@ const Publications = () => {
                     <h3 className="text-lg md:text-xl font-semibold leading-snug mb-2">
                       {pub.title}
                     </h3>
-                  <p className="text-base text-muted-foreground mb-3">
-  {pub.authors}
-</p>
+                    <p className="text-base text-muted-foreground mb-3">
+                      {pub.authors}
+                    </p>
                     {pub.image && (
                       <img
                         src={pub.image}

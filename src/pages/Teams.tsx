@@ -115,10 +115,10 @@ const Team = () => {
                         <Award className="h-4 w-4 text-primary" />
                         {member.qualification}
                       </div>
-                      <div className="flex items-center gap-2">
+                      {/* <div className="flex items-center gap-2">
                         <BookOpen className="h-4 w-4 text-primary" />
                         {member.publications}+ Publications
-                      </div>
+                      </div> */}
                       <div>{member.experience}</div>
                       <div className="flex items-center gap-2">
                         <MapPin className="h-4 w-4 text-primary" />
