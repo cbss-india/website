@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: "Dr. Syed Ainul Hussain",
     role: "Founder & Director",
-    bio: "Pioneering biodiversity conservation planning and sustainability science in India with over 20 years of ecosystem research experience.",
+    bio: "Pioneering biodiversity conservation planning and sustainability science in India with over 40 years of ecosystem research experience.",
     email: "director@cbss.org.in",
     linkedin: "#",
     image: "/team/director.jpg",
