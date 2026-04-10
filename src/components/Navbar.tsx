@@ -19,7 +19,6 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2 text-primary">
-          <Leaf className="h-6 w-6" />
           <span className="text-xl font-bold font-heading">CBSS</span>
         </Link>
 
