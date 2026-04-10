@@ -8,8 +8,8 @@ const teamMembers = [
     email: "director@cbss.org.in",
     linkedin: "#",
     image: "/team/director.jpg",
-    qualification: "Ph.D. in Conservation Biology",
-    experience: "20+ Years Experience",
+    qualification: "Ph.D. in Wildlife Science",
+    experience: "40+ Years Experience",
     expertise: [
       "Ecosystem Restoration",
       "Conservation Planning",
