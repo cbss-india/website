@@ -23,15 +23,22 @@ const Contact = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Get in Touch
+            </h1>
             <p className="text-lg text-muted-foreground">
-              Have a question or want to get involved? We'd love to hear from you.
+              Idara, Doon Officers Enclave, Wildlife Institute of India Road,
+              Dehradun, Uttarakhand, India, PIN: 248002 <br></br> The Corporate
+              Identity Number: U85300UR2021NPL012063 Date of incorporation:
+              10-02-2021
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium mb-2">
+                Name
+              </label>
               <Input
                 id="name"
                 placeholder="Your name"
@@ -41,7 +48,9 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">
+                Email
+              </label>
               <Input
                 id="email"
                 type="email"
@@ -52,7 +61,12 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium mb-2"
+              >
+                Message
+              </label>
               <Textarea
                 id="message"
                 placeholder="Tell us how we can help..."
