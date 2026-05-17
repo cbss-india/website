@@ -66,9 +66,9 @@ const Index = () => {
       </section>
 
       {/* Vision */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Vision</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Vision</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Promote human wellbeing and a just world through sustainable
             development and equitable benefit sharing

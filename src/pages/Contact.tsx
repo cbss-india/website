@@ -28,9 +28,9 @@ const Contact = () => {
             </h1>
             <p className="text-lg text-muted-foreground">
               Idara, Doon Officers Enclave, Wildlife Institute of India Road,
-              Dehradun, Uttarakhand, India, PIN: 248002 <br></br> The Corporate
-              Identity Number: U85300UR2021NPL012063 Date of incorporation:
-              10-02-2021
+              Dehradun, Uttarakhand, India, PIN: 248002 <br></br>
+              The Corporate Identity Number: U85300UR2021NPL012063
+              <br></br>Date of incorporation: 10-02-2021
             </p>
           </div>
 
